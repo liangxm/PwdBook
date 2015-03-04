@@ -27,4 +27,8 @@
         android:icon="@drawable/ic_action_settings"
         android:title="@string/settings"
         app:showAsAction="never|collapseActionView"/>
+    <item android:id="@+id/action_buy"
+        android:icon="@drawable/pb_shop"
+        android:title="@string/get_pro"
+        app:showAsAction="never|collapseActionView"/>
 </menu>

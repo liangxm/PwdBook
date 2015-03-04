@@ -49,7 +49,7 @@
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"/>
         </RelativeLayout>
-        <com.z299studio.pb.PbScrollView android:id="@+id/scroll"
+        <com.z299studio.pbfree.PbScrollView android:id="@+id/scroll"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="5">
@@ -58,6 +58,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:animateLayoutChanges="true"/>
-        </com.z299studio.pb.PbScrollView>
+        </com.z299studio.pbfree.PbScrollView>
     </LinearLayout>
 </merge>

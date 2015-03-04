@@ -105,26 +105,10 @@
     <string name="auth_required">The source file is encrypted with a different password, please input the password to unlock it.</string>
     <!-- String arrays -->
     <string-array name="theme_names">
-    <!-- String arrays -->
         <item>Default Light Theme</item>
-    <!-- String arrays -->
         <item>Default Dark Theme</item>
-    <!-- String arrays -->
-        <item>Indigo Light</item>
-    <!-- String arrays -->
-        <item>Indigo Dark</item>
-    <!-- String arrays -->
-        <item>Purple Light</item>
-    <!-- String arrays -->
-        <item>Purple Dark</item>
-    <!-- String arrays -->
         <item>Blue-Grey Light</item>
-    <!-- String arrays -->
         <item>Blue-Grey Dark</item>
-    <!-- String arrays -->
-        <item>Teal Light</item>
-    <!-- String arrays -->
-        <item>Teal Dark</item>
     </string-array>
     <string-array name="category_names">
         <item>Bank Accounts</item>
@@ -171,6 +155,7 @@
     <string name="next">Next</string>
     <string name="done">Done</string>
     <string name="guide">App Introductions</string>
+    <string name="get_pro">Buy Premium Version</string>
     <string name="title_tour0">Stay Secure</string>
     <string name="title_tour1">Access Anywhere</string>
     <string name="title_tour2">Keep Easy</string>

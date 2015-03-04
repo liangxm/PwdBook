@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.z299studio.pb;
+package com.z299studio.pbfree;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.z299studio.pb"
+        applicationId "com.z299studio.pbfree"
         minSdkVersion 14
         targetSdkVersion 21
     }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.z299studio.pb.PbScrollView android:id="@+id/scroll"
+    <com.z299studio.pbfree.PbScrollView android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none">
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:animateLayoutChanges="true"/>
         </LinearLayout>
-    </com.z299studio.pb.PbScrollView>
+    </com.z299studio.pbfree.PbScrollView>
 
     <FrameLayout android:id="@+id/toolbar_container"
         android:layout_width="match_parent"

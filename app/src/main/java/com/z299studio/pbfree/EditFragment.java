@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.z299studio.pb;
+package com.z299studio.pbfree;
 
 import android.app.Activity;
 import android.content.ClipData;
@@ -43,7 +43,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 
-import com.z299studio.pb.AccountManager.Account.Entry;
+import com.z299studio.pbfree.AccountManager.Account.Entry;
 
 import java.util.ArrayList;
 

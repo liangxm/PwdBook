@@ -7,13 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
         <LinearLayout android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_above="@+id/ad">
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:background="?attr/colorPrimary"
@@ -21,18 +22,28 @@
                 android:layout_height="@dimen/action_bar_size"/>
             <fragment
                 android:id="@+id/panel_main"
-                android:name="com.z299studio.pb.MainListFragment"
+                android:name="com.z299studio.pbfree.MainListFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
         </LinearLayout>
         <FrameLayout android:id="@+id/detail_panel"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </FrameLayout>
+            android:layout_height="match_parent"
+            android:layout_above="@id/ad"/>
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@id/ad"
+            android:background="?attr/colorPrimary"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ads:adUnitId="@string/admob_ad_unit"
+            ads:adSize="SMART_BANNER"/>
+    </RelativeLayout>
 
     <fragment
         android:id="@+id/navigation_drawer"
-        android:name="com.z299studio.pb.NavigationDrawerFragment"
+        android:name="com.z299studio.pbfree.NavigationDrawerFragment"
         android:layout_width="@dimen/navigation_drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"

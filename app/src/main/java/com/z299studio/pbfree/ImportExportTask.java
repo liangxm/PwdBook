@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.z299studio.pb;
+package com.z299studio.pbfree;
 
 import android.os.AsyncTask;
 import android.os.Environment;

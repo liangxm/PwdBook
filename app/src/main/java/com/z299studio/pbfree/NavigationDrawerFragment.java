@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.z299studio.pb;
+package com.z299studio.pbfree;
 
 import android.app.Activity;
 import android.content.res.Configuration;
@@ -38,7 +38,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-import com.z299studio.pb.NavigationDrawerAdapter.NavMenuItem;
+import com.z299studio.pbfree.NavigationDrawerAdapter.NavMenuItem;
 
 public class NavigationDrawerFragment extends Fragment implements
         AdapterView.OnItemClickListener{
@@ -96,7 +96,7 @@ public class NavigationDrawerFragment extends Fragment implements
     public void onResume() {
         super.onResume();
         if(Application.getInstance().queryChange(Application.DATA_OTHER)||
-                Application.getInstance().queryChange(Application.DATA_OTHER)) {
+                Application.getInstance().queryChange(Application.DATA_ALL)) {
             mAdapter.setList(buildMenuItems());
             mAdapter.notifyDataSetChanged();
             select(AccountManager.ALL_CATEGORY_ID);
@@ -240,9 +240,9 @@ public class NavigationDrawerFragment extends Fragment implements
         if(mDrawerHidden) {
             result.add(new NavMenuItem(0, null, 0, 0,
                     NavMenuItem.MENU_SEPARATOR));
-            int stringIds[] = {R.string.help, R.string.settings, R.string.about};
+            int stringIds[] = {R.string.help, R.string.settings, R.string.about, R.string.get_pro};
             int iconIds[] = {R.drawable.ic_action_help, R.drawable.ic_action_settings,
-                    R.drawable.ic_action_about};
+                    R.drawable.ic_action_about, R.drawable.pb_shop};
             for(i = 0; i < stringIds.length; ++i) {
                 result.add(new NavMenuItem(iconIds[i], r.getString(stringIds[i]),
                         0, stringIds[i], NavMenuItem.MENU_ACTION));
@@ -273,7 +273,7 @@ public class NavigationDrawerFragment extends Fragment implements
     public void select(int category) {
         Integer pos = mCategory2Navigation.get(category);
         if(pos!=null) {
-            onItemClick(mMenuList, null, pos, 0);
+            onItemClick(mMenuList, null, pos, category);
         }        
     }
 

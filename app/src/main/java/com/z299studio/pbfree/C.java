@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.z299studio.pb;
+package com.z299studio.pbfree;
 
 /* 
  * Constants definitions. The keys or values used through out the shared 
@@ -58,10 +58,8 @@ public final class C {
     }
     
     public static final int THEMES[] = {
-        R.style.AppLight_Default, R.style.AppDark_Default, R.style.AppLight_IndigoPink,
-        R.style.AppDark_IndigoPink, R.style.AppLight_PurpleRed, R.style.AppDark_PurpleRed,
-        R.style.AppLight_LightblueCyan, R.style.AppDark_LightblueCyan, R.style.AppLight_TealAmber,
-        R.style.AppDark_TealAmber,
+        R.style.AppLight_Default, R.style.AppDark_Default,
+        R.style.AppLight_LightblueCyan, R.style.AppDark_LightblueCyan
     };
 
     public static final int colorPrimary = 0;

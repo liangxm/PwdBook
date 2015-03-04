@@ -103,26 +103,10 @@
     <string name="auth_required">原始檔案使用一個不同的密碼加密，請輸入它的密碼以解鎖。</string>
     <!-- String arrays -->
     <string-array name="theme_names">
-    <!-- String arrays -->
         <item>默認淡色主題</item>
-    <!-- String arrays -->
         <item>默認深色主題</item>
-    <!-- String arrays -->
-        <item>靛青淡色</item>
-    <!-- String arrays -->
-        <item>靛青深色</item>
-    <!-- String arrays -->
-        <item>紫色淡色</item>
-    <!-- String arrays -->
-        <item>紫色深色</item>
-    <!-- String arrays -->
         <item>藍灰淡色</item>
-    <!-- String arrays -->
         <item>藍灰深色</item>
-    <!-- String arrays -->
-        <item>藍綠淡色</item>
-    <!-- String arrays -->
-        <item>藍綠深色</item>
     </string-array>
     <string-array name="category_names">
         <item>銀行賬號</item>
@@ -169,6 +153,7 @@
     <string name="next">下一個</string>
     <string name="done">完成</string>
     <string name="guide">應用程式概覽</string>
+    <string name="get_pro">購買付費版</string>
     <string name="title_tour0">安全存儲</string>
     <string name="title_tour1">隨時訪問</string>
     <string name="title_tour2">簡單易用</string>

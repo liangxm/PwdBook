@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.z299studio.pb;
+package com.z299studio.pbfree;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -37,6 +37,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
 
 public class MainActivity extends ActionBarActivity implements ItemFragmentListener,
@@ -55,6 +58,8 @@ public class MainActivity extends ActionBarActivity implements ItemFragmentListe
     private ArrayList<AccountManager.Account> mSearchedAccounts= null;
     private String mLastKey = "";
     private String mTitle;
+    
+    private AdView mAds;
 
     private Runnable mTintStatusBar = new Runnable() {
         @Override
@@ -109,6 +114,9 @@ public class MainActivity extends ActionBarActivity implements ItemFragmentListe
             mTitle = getString(R.string.all_accounts);
         }
         getSupportActionBar().setTitle(mTitle);
+        mAds = (AdView)findViewById(R.id.ad);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAds.loadAd(adRequest);
     }
 
     @Override
@@ -164,6 +172,14 @@ public class MainActivity extends ActionBarActivity implements ItemFragmentListe
         super.onPause();
         mApp.handleChange(Application.DATA_OTHER);
         mApp.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if(mAds!=null) {
+            mAds.destroy();
+        }
+        super.onDestroy();
     }
     
     private void setupToolbar() {
@@ -226,6 +242,15 @@ public class MainActivity extends ActionBarActivity implements ItemFragmentListe
                 startActivity(new Intent(this, Settings.class));
                 mApp.ignoreNextPause();
                 break;
+            
+            case R.id.action_buy:
+                uri = Uri.parse("market://details?id=com.z299studio.pb");
+                Intent buyIntent = new Intent(Intent.ACTION_VIEW, uri);
+                try { startActivity(buyIntent); }
+                catch (ActivityNotFoundException e) {
+                    Log.w("PwdBook", "Activity not found when launching buy");
+                }
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -276,8 +301,8 @@ public class MainActivity extends ActionBarActivity implements ItemFragmentListe
                     break;
                 case R.string.help:
                     Uri uri = Uri.parse(getResources().getString(R.string.link_ap_help));
-                    Intent rateIntent = new Intent(Intent.ACTION_VIEW, uri);
-                    try {  startActivity(rateIntent); }
+                    Intent helpIntent = new Intent(Intent.ACTION_VIEW, uri);
+                    try {  startActivity(helpIntent); }
                     catch (ActivityNotFoundException e) {
                         Log.w("PwdBook", "Activity not found when launching help");
                     }
@@ -285,6 +310,15 @@ public class MainActivity extends ActionBarActivity implements ItemFragmentListe
                 case R.string.about:
                     ActionDialog.create(ActionDialog.ACTION_ABOUT)
                             .show(getSupportFragmentManager(), "action_dialog");
+                    break;
+                
+                case R.string.get_pro:
+                    uri = Uri.parse("market://details?id=com.z299studio.pb");
+                    Intent buyIntent = new Intent(Intent.ACTION_VIEW, uri);
+                    try { startActivity(buyIntent); }
+                    catch (ActivityNotFoundException e) {
+                        Log.w("PwdBook", "Activity not found when launching buy");
+                    }
                     break;
             }
         }
@@ -306,6 +340,7 @@ public class MainActivity extends ActionBarActivity implements ItemFragmentListe
         if(edit != null) {
             getSupportFragmentManager().popBackStack("edit",
                     FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            mAds.setVisibility(View.VISIBLE);
             return;
         }
         Fragment detail = getSupportFragmentManager().findFragmentByTag("detail");
@@ -337,6 +372,7 @@ public class MainActivity extends ActionBarActivity implements ItemFragmentListe
         ft.replace(R.id.detail_panel, EditFragment.create(categoryId, accountId), "edit")
                 .addToBackStack("edit")
                 .commit();
+        mAds.setVisibility(View.GONE);
     }
 
     @Override
