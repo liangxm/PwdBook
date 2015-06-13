@@ -80,7 +80,7 @@ public class TourActivity extends Activity implements AnimatorListener{
         mNext = (Button)findViewById(R.id.next);
         mContainer = (LinearLayout)findViewById(R.id.container);
         mAppText = (TextView)findViewById(R.id.app);
-        if(mReady == false) {
+        if(!mReady) {
             mAppText.animate().alpha(1.0f).setDuration(400).setListener(this);
         }
         else {

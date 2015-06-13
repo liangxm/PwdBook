@@ -29,7 +29,7 @@ import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -46,7 +46,7 @@ import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
-public class HomeActivity extends ActionBarActivity implements
+public class HomeActivity extends AppCompatActivity implements
 AnimatorListener, SyncService.SyncListener{
     protected Application mApp;
     protected EditText mPwdEdit;
@@ -88,7 +88,7 @@ AnimatorListener, SyncService.SyncListener{
         else {
             mStage = savedInstanceState.getInt("home_stage");
         }
-        if(Application.Options.mTour == false){
+        if(!Application.Options.mTour){
             Intent intent = new Intent(this, TourActivity.class);
             intent.putExtra(C.ACTIVITY, C.Activity.HOME);
             this.startActivity(intent);
@@ -150,7 +150,6 @@ AnimatorListener, SyncService.SyncListener{
                 et_confirm.setText("");
                 mPwdEdit.setText("");
                 Application.showToast(this, R.string.pwd_unmatch, Toast.LENGTH_SHORT);
-                return;
             }
         }
         else {

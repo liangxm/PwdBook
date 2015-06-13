@@ -24,7 +24,7 @@ import android.widget.ScrollView;
 public class PbScrollView extends ScrollView {
 
     public interface PbScrollListener{
-        public void onScroll(int l, int t, int oldl, int oldt);
+        void onScroll(int l, int t, int oldl, int oldt);
     }
 
     private PbScrollListener mPbListener;
